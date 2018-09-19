@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CosmicSample</title>
+  <style>
+  </style>
+</head>
+<body>
+
+<form>
+  <input type="text" name="cardNo" id="cardNo" data-cosmic-space data-gap=4 data-maxlength=16 />
+  <input type="text" name="Tel" id="cardNo" data-cosmic-space data-gap=3 data-maxlength=9 />
+</form>
+
+<script src="cosmic.js"></script>
+
+<script>
+
+var targets =  document.querySelectorAll('[data-cosmic-space]')
+
+targets.forEach(function(target) {
+  new CosmicSpace(target).listen
+})
+
+</script>
+
+</body>
+</html>
+
