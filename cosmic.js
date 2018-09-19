@@ -1,4 +1,6 @@
 
+// TODO: 責務分けたみが深い
+
 class CosmicSpace {
   constructor(target) {
     this.target = target
@@ -7,7 +9,7 @@ class CosmicSpace {
     this.spaceLength = this.calculateSpaceLength()
     this.backSpaceKeyCode =  8
     this.deleteKeyCode = 46
-    this.setMaxLength()
+    this.setRealMaxLength()
     this.listen()
   }
 
@@ -35,7 +37,7 @@ class CosmicSpace {
     })
   }
 
-  setMaxLength() {
+  setRealMaxLength() {
     var maxLength = this.maxLengthWithSpace()
     this.target.setAttribute('maxlength', maxLength)
   }
