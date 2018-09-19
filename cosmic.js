@@ -18,6 +18,9 @@ class CosmicSpace {
       var sentence = e.target.value
       var trimmed_sentence = _this.trimmed_string(sentence)
 
+      if (sentence.length >= _this.maxLengthWithoutSpace()) {
+        return
+      }
 
       if (trimmed_sentence.length % _this.gap === 0 && trimmed_sentence.length > 0) {
         sentence = sentence + " "
@@ -26,8 +29,6 @@ class CosmicSpace {
       if (e.keyCode === _this.backSpaceKeyCode || e.keyCode === _this.deleteKeyCode) {
         sentence = _this.removeSpaceFromTail(sentence)
       }
-
-      console.log(sentence)
 
       e.target.value = sentence
     })
@@ -46,7 +47,7 @@ class CosmicSpace {
     return Math.floor( (this.maxLength - 1) / this.gap )
   }
 
-  maxLengthWithoutSpace(maxLength, spaceLength) {
+  maxLengthWithoutSpace() {
     return this.maxLength + this.spaceLength
   }
 
